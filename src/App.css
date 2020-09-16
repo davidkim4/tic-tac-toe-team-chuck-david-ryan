@@ -1,5 +1,26 @@
+body{
+  margin: 1em;
+  text-align: center;
+}
+
 #square{
   height: 100px;
   width: 100px;
   border: 2px solid black;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
 }
+
+#gameBoard{
+  display: flex;
+  flex-wrap: wrap;
+  width: 312px;
+  margin: 0 auto;
+  box-shadow: 10px 10px 5px #3a606e;
+  align-items: center;
+  border: 5px solid black;
+}
+
+/* body{background-image: linear-gradient(to bottom right, #b2cede, #3a606e) } */
