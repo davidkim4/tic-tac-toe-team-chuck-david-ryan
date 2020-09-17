@@ -1,7 +1,7 @@
 body{
   margin: 1em;
   text-align: center;
-  background-image: linear-gradient(to bottom right, #93e9be, #3A606E) 
+  background-color:  #446161
 }
 
 #square{
@@ -11,7 +11,15 @@ body{
   justify-content: center;
   display: flex;
   align-items: center;
-  font-size: 30px;
+  font-size: 75px;
+  transition-duration: 0.7s;
+  font-family: bold;
+}
+
+
+#square:hover{
+  background-color: #adefd1ff;
+  
 }
 
 #gameBoard{
@@ -19,9 +27,18 @@ body{
   flex-wrap: wrap;
   width: 312px;
   margin: 0 auto;
-  box-shadow: 10px 10px 5px #3a606e;
+  box-shadow: 10px 10px 2px black;
   align-items: center;
   border: 5px solid black;
 }
 
-/* body{background-image: linear-gradient(to bottom right, #b2cede, #3a606e) } */
+h1{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 40px
+}
+
+button{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 20px;
+  border-radius: 15px
+}
