@@ -12,6 +12,14 @@ class App extends Component {
     }
   }
 
+  restartGame = () => {
+    let { squares, turns} = this.state
+    turns = 0
+    this.setState({turns: turns})
+    squares = [...Array(9).fill("")]
+    this.setState({squares: squares})
+  }
+
   handleLocation = (indexLocation) => {
     let { squares, turns } = this.state
     if (turns === 9) {
@@ -50,19 +58,24 @@ class App extends Component {
       [2, 4, 6]
     ]
     for (let i = 0; i < winningCombo.length; i++){
-    const [a, b, c] = winningCombo[i]
-    let winner = squares[a]
-      if(squares[a] === squares[a] && squares[a] === squares[b] && squares[a] === squares[c]){
-        return winner
+      const [a, b, c] = winningCombo[i]
+      console.log(a,b,c)
+      console.log(squares)
+      let winner = squares[a]
+      console.log(winner)
+      if ((squares[a] === 'x' && squares[b] === 'x' && squares[c] === 'x') ||
+    (squares[a] === 'o' && squares[b] === 'o' && squares[c] === 'o')){
+        // if(squares[a] === squares[a] && squares[a] === squares[b] && squares[a] === squares[c]){
+          console.log("were here")
+          return winner
       }
     }
   }
 
-  gameResult = () => {
+  gameResult = (winner) => {
     let{squares, turns} = this.state
-    let winner = this.checkWinner
       if (winner === "x" || winner === "o"){
-        alert(winner + 'is the winner')
+        alert(winner.toUpperCase() + ' is the winner!!!')
       }
       else if(turns === squares.length){
         alert( "Cats Game")
@@ -80,6 +93,7 @@ class App extends Component {
           xoMark={square}
           index={index}
           checkWinner={this.checkWinner}
+          gameResult={this.gameResult}
         />
       )
     })
@@ -89,10 +103,11 @@ class App extends Component {
         <div id="gameBoard">
           {square}
         </div>
+        <br></br>
         <Message
           gameResult={this.gameResult}
         />
-
+        <button onClick = {this.restartGame}>Restart Game</button>
       </React.Fragment>
     )
   }
