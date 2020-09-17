@@ -1,7 +1,8 @@
 body{
   margin: 1em;
   text-align: center;
-  background-color:  #446161
+  /* background-color:  #446161 */
+  background-color: #363636
 }
 
 #square{
@@ -14,12 +15,12 @@ body{
   font-size: 75px;
   transition-duration: 0.7s;
   font-family: bold;
+  background-color: rgb(96,134,117);
 }
 
 
 #square:hover{
   background-color: #adefd1ff;
-  
 }
 
 #gameBoard{
@@ -34,11 +35,23 @@ body{
 
 h1{
   font-family: 'Permanent Marker', cursive;
-  font-size: 40px
+  font-size: 40px;
+  color: #ADEFD1FF;
 }
 
 button{
   font-family: 'Permanent Marker', cursive;
   font-size: 20px;
   border-radius: 15px
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.animate{
+  color: black;
+  opacity: 100%;
+  animation: fadein 2s;
 }

@@ -11,7 +11,9 @@ class Square extends Component {
     return (
       <React.Fragment>
         <div id="square" onClick={this.handleClick}>
-          {this.props.xoMark}
+          <p className="animate">
+            {this.props.xoMark}
+          </p>
         </div>
       </React.Fragment >
     )
