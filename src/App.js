@@ -77,7 +77,8 @@ class App extends Component {
     //console.log(turns)
     if (winner === "x" || winner === "o") {
       alert(winner.toUpperCase() + ' is the winner!!!')
-      this.restartGame()
+      //this.restartGame()
+      this.setState({ turns: 9 })
     }
     else if (turns === squares.length - 1) {
       alert("Cats Game")
@@ -87,7 +88,7 @@ class App extends Component {
 
 
   render() {
-    let { squares, turns } = this.state
+    let { squares } = this.state
     let square = squares.map((square, index) => {
       return (
         <Square
