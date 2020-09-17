@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Square from './components/Square'
+import Message from './components/Message'
 import './App.css'
 
 class App extends Component {
@@ -26,26 +27,49 @@ class App extends Component {
       else {
         squares[indexLocation] = "o"
       }
+      this.setState({squares: squares})
       turns += 1
+      this.setState({turns: turns})
+      console.log(squares)
     }
   }
 
 
-  const checkWinner = () => {
+   checkWinner = () => {
     let { squares } = this.state
-    [0, 1, 2],
+
+    const winningCombo =
+    [
+      [0, 1, 2],
       [3, 4, 5],
-    [6, 7, 8],
+      [6, 7, 8],
       [0, 3, 6],
       [1, 4, 7],
       [2, 5, 8],
       [0, 4, 8],
       [2, 4, 6]
+    ]
+    for (let i = 0; i < winningCombo.length; i++){
+    const [a, b, c] = winningCombo[i]
+    let winner = squares[a]
+      if(squares[a] === squares[a] && squares[a] === squares[b] && squares[a] === squares[c]){
+        return winner
+      }
+    }
   }
 
-  checkWinningCombo = () => {
-    for
+  gameResult = () => {
+    let{squares, turns} = this.state
+    let winner = this.checkWinner
+      if (winner === "x" || winner === "o"){
+        alert(winner + 'is the winner')
+      }
+      else if(turns === squares.length){
+        alert( "Cats Game")
+      }
+
   }
+
 
   render() {
     let { squares, turns } = this.state
@@ -55,6 +79,7 @@ class App extends Component {
           handleLocation={this.handleLocation}
           xoMark={square}
           index={index}
+          checkWinner={this.checkWinner}
         />
       )
     })
@@ -64,6 +89,10 @@ class App extends Component {
         <div id="gameBoard">
           {square}
         </div>
+        <Message
+          gameResult={this.gameResult}
+        />
+
       </React.Fragment>
     )
   }
