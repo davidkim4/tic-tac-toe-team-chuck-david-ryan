@@ -76,12 +76,17 @@ class App extends Component {
     let { squares, turns } = this.state
     //console.log(turns)
     if (winner === "x" || winner === "o") {
-      alert(winner.toUpperCase() + ' is the winner!!!')
+      setTimeout(function () {
+        alert(winner.toUpperCase() + ' is the winner!!!');
+      }, 500);
+
       //this.restartGame()
       this.setState({ turns: 9 })
     }
     else if (turns === squares.length - 1) {
-      alert("Cats Game")
+      setTimeout(function () {
+        alert('Cats Game!!!');
+      }, 500);
     }
 
   }

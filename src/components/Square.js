@@ -13,7 +13,7 @@ class Square extends Component {
         <div id="square" onClick={this.handleClick}>
           {this.props.xoMark}
         </div>
-      </React.Fragment>
+      </React.Fragment >
     )
   }
 }
