@@ -1,6 +1,7 @@
 body{
   margin: 1em;
   text-align: center;
+  background-image: linear-gradient(to bottom right, #93e9be, #3A606E) 
 }
 
 #square{
